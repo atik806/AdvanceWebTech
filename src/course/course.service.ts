@@ -36,6 +36,16 @@ private courses = [
       title: 'Data structure',
       description: 'Deep dive into Data Structure features',
     },
+
+    {
+      id: '7',
+      title: 'Mobile Application',
+      description: 'Deep dive into Mobile application features',
+    }
+
+
+
+    
     
 
     
