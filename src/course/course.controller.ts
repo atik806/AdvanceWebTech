@@ -17,16 +17,16 @@ export class CourseController {
 
     @Post()
     createCourse(@Body() createCourseDto: any) {
-        return this.courseService.createCourse(createCourseDto);
+        return this.courseService.createCourse();
     }
 
     @Put(':id')
-    updateCourse(@Param('id') id: string, @Body() updateCourseDto: any) {
-        return this.courseService.updateCourse(id, updateCourseDto);
+    updateCourse(@Param('id') id: string) {
+        return this.courseService.updateCourse(id);
     }
     @Patch(':id')
-    partialUpdateCourse(@Param('id') id: string, @Body() patchCourseDto: any) {
-        return this.courseService.patchCourse(id, patchCourseDto);
+    partialUpdateCourse(@Param('id') id: string) {
+        return this.courseService.patchCourse(id);
     }
 
     @Delete(':id')

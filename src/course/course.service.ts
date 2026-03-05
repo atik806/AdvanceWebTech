@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
+
 @Injectable()
 export class CourseService {
 
@@ -14,6 +15,30 @@ private courses = [
       title: 'Advanced NestJS',
       description: 'Deep dive into NestJS features',
     },
+    {
+      id: '3',
+      title: 'Advanced web tech',
+      description: 'Deep dive into web dev features',
+    },
+    {
+      id: '4',
+      title: 'Machine Learning',
+      description: 'Deep dive into Machine Learning features',
+    },
+
+    {
+      id: '5',
+      title: 'Natural language processing',
+      description: 'Deep dive into NLP features',
+    },
+    {
+      id: '6',
+      title: 'Data structure',
+      description: 'Deep dive into Data Structure features',
+    },
+    
+
+    
 ];
 
 getAllCourses() {
@@ -32,58 +57,19 @@ getCourseById(id: string) {
 }
 
   
-  createCourse(createCourseDto: any) {
-    const newCourse = {
-      id: Date.now().toString(),
-      ...createCourseDto,
-    };
-
-    this.courses.push(newCourse);
-    return newCourse;
-  }
-
-  
-  updateCourse(id: string, updateCourseDto: any) {
-    const courseIndex = this.courses.findIndex(course => course.id === id);
-
-    if (courseIndex === -1) {
-      throw new Error('Course not found');
-    }
-
-    this.courses[courseIndex] = {
-      id: id,
-      ...updateCourseDto,
-    };
-
-    return this.courses[courseIndex];
-  }
-
-
-  patchCourse(id: string, patchCourseDto: any) {
-    const courseIndex = this.courses.findIndex(course => course.id === id);
-
-    if (courseIndex === -1) {
-      throw new Error('Course not found');
-    }
-
-    this.courses[courseIndex] = {
-      ...this.courses[courseIndex],
-      ...patchCourseDto,
-    };
-
-    return this.courses[courseIndex];
-  }
-
-  
-  deleteCourse(id: string) {
-    const index = this.courses.findIndex(course => course.id === id);
-
-    if (index === -1) {
-      throw new Error('Course not found');
-    }
-
-    this.courses.splice(index, 1);
-
-    return { message: 'Course deleted successfully' };
-  }
+createCourse(){
+  return "create course - from service";
 }
+
+  
+  updateCourse(id: string){
+    return `Update Course ${id} - from Service`;
+  }
+
+patchCourse(id: string){
+  return `patch Course ${id} - from Service`;
+}
+
+deleteCourse(id: string){
+  return `Delete Course ${id} - from Service`;
+}}
